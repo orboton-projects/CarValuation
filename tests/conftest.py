@@ -11,3 +11,4 @@ def browser_setup():
         yield page
         context.close()
         browser.close()
+

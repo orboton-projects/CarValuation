@@ -13,3 +13,5 @@ class VehicleDetailsPage(BasePage):
         self.fill_textbox("#Postcode", postcode)
         self.fill_textbox("#TelephoneNumber", mobile)
         self.click_button("#advance-btn")
+
+        #All locators needs to be isolated from hardcoded to follow best practice.

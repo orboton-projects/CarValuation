@@ -5,10 +5,10 @@ from pages.valuation_view_page import ValuationViewPage
 from pages.vechicle_details_page import VehicleDetailsPage
 from utils.file import read_input_file, read_output_file
 
-# Dynamically define the project root directory
+# project root directory
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
-# Define file paths relative to the project root
+# paths relative to the project root
 DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 INPUT_FILE_PATH = os.path.join(DATA_DIR, "car_input.txt")
 OUTPUT_FILE_PATH = os.path.join(DATA_DIR, "car_output.txt")
@@ -41,10 +41,9 @@ def test_car_valuation(browser_setup, car_record):
         vehicle_page.fill_details(
             email="xyz@xyz.com",
             postcode="AB1 1XY",
-            mobile="07000000000"
+            mobile="07000000000" # sensitive creds will be move to credential manager or vault later.
         )
         actual_valuation = valuation_page.get_valuation()
-
         # Validate the results
         assert actual_valuation == expected_valuation, \
             f"Mismatch for {reg_number}: Expected {expected_valuation}, Got {actual_valuation}"
@@ -52,5 +51,5 @@ def test_car_valuation(browser_setup, car_record):
         print(f"Test passed for {reg_number}: Valuation matched.")
 
     except AssertionError as e:
-        # Log the mismatch without failing the test
+        # Log the mismatch without failing the test, This can be changed based on the requirementts.
         print(f"Test failed for {reg_number}: {e}")

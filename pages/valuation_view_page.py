@@ -12,3 +12,5 @@ class ValuationViewPage(BasePage):
         """Retrieve the valuation result."""
         return self.get_text(
             ".col-12.col-lg-3.d-none.d-sm-block.order-1.page-header > div > div.d-none.d-lg-block > div > div")
+        #this locator needs to be moved and updated short.
+# All locators needs to be isolated from hardcoded to follow best practice.

@@ -26,3 +26,5 @@ class HomePage(BasePage):
         self.fill_textbox("#Mileage", mileage)  # Random mileage
         self.click_button("#btn-go")  # Submit button
         self.page.wait_for_selector("#questions-title")  # Wait for result
+
+        # All locators needs to be isolated from hardcoded to follow best practice.
