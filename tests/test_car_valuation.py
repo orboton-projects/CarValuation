@@ -1,5 +1,8 @@
 import pytest
 
+from pages.home_page import HomePage
+from pages.valuation_view_page import ValuationViewPage
+from pages.vechicle_details_page import VehicleDetailsPage
 from utils.file import read_input_file, read_output_file
 
 
@@ -8,7 +11,10 @@ from utils.file import read_input_file, read_output_file
 def test_car_valuation(browser_setup, car_record):
     """Test case to validate car valuations."""
     page = browser_setup
-    car_valuation_page = CarValuationPage(page)
+    home_page = HomePage(page)
+    vehicle_page = VehicleDetailsPage(page)
+    valuation_page = ValuationViewPage(page)
+
 
     # Extract data for the current car record
     reg_number = car_record["VARIANT_REG"]
@@ -17,11 +23,11 @@ def test_car_valuation(browser_setup, car_record):
 
     try:
         # Perform vehicle search and valuation
-        car_valuation_page.navigate_to("https://www.webuyanycar.com/")
-        car_valuation_page.handle_cookies(accept=True)
-        car_valuation_page.search_vehicle(reg_number)
-        car_valuation_page.fill_details(email="xxx@xxx.com", postcode="XX0 0XX", mobile="07000000000")
-        actual_valuation = car_valuation_page.get_valuation()
+        home_page.navigate_to("https://www.webuyanycar.com/")
+        home_page.handle_cookies(accept=True)
+        home_page.search_vehicle(reg_number)
+        vehicle_page.fill_details(email="xxx@xxx.com", postcode="AB0 0YZ", mobile="07000000000")
+        actual_valuation = valuation_page.get_valuation()
 
         # Validate the results
         assert actual_valuation == expected_valuation, \
@@ -31,3 +37,7 @@ def test_car_valuation(browser_setup, car_record):
     except AssertionError as e:
         # Log the mismatch without failing the test
         print(f"Test failed for {reg_number}: {e}")
+
+
+        #https://www.webuyanycar.com/vehicle/details
+        #https://www.webuyanycar.com/valuation/view
