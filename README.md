@@ -17,13 +17,11 @@ This project automates validation of car valuations using **Python** and **Playw
 ```plaintext
 .
 
-├── pages/                   # Reusable web interaction methods
-├── utils/                   # Input/output file handling
+├── pages/                   # Reusable web interaction methods based on page
+├── utils/                   # Utils or helpers methods
 ├── tests/                   # Test scripts
 ├── actions/                 # User Actions 
-├── data/                    # Test data
-   ├── car_input.txt         # Input file
-   ├── car_output.txt        # Expected results             
+├── data/                    # Test data      
 ├── requirements.txt         # Dependencies
 ├── README.md                # Documentation
 ```
