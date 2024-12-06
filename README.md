@@ -16,14 +16,16 @@ This project automates validation of car valuations using **Python** and **Playw
 ## Project Structure
 ```plaintext
 .
-├── src/
-│   ├── pages/                   # Reusable web interaction methods
-│   ├── utils/                   # Input/output file handling
-│   ├── tests/                   # Test scripts
-├── car_input.txt                # Input file
-├── car_output.txt               # Expected results
-├── requirements.txt             # Dependencies
-├── README.md                    # Documentation
+
+├── pages/                   # Reusable web interaction methods
+├── utils/                   # Input/output file handling
+├── tests/                   # Test scripts
+├── actions/                 # User Actions 
+├── data/                    # Test data
+   ├── car_input.txt         # Input file
+   ├── car_output.txt        # Expected results             
+├── requirements.txt         # Dependencies
+├── README.md                # Documentation
 ```
 
 ---
