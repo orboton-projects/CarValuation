@@ -11,6 +11,19 @@ DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 TEST_DATA_FILE_PATH = os.path.join(DATA_DIR, "user_data.txt")
 TEST_DATA = read_input_file(TEST_DATA_FILE_PATH)[0]
 
+def navigate_and_handle_cookies(page):
+    """
+       Perform the steps to navigate and handle cookies.
+
+       Args:
+           page: Playwright browser page instance.
+
+       Returns: None
+       """
+    home_page = HomePage(page)
+    home_page.navigate_to("https://www.webuyanycar.com/")
+    home_page.handle_cookies(accept=True)
+
 def perform_car_valuation(page, reg_number):
     """
     Perform the steps to validate car valuation for a specific registration number.
@@ -27,8 +40,6 @@ def perform_car_valuation(page, reg_number):
     valuation_page = ValuationViewPage(page)
 
     # Perform steps
-    home_page.navigate_to("https://www.webuyanycar.com/")
-    home_page.handle_cookies(accept=True)
     home_page.search_vehicle(reg_number)
     vehicle_page.fill_details(
         email=TEST_DATA["EMAIL"],

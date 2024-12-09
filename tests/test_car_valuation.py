@@ -1,6 +1,6 @@
 import os
 import pytest
-from actions.valuation_actions import perform_car_valuation
+from actions.valuation_actions import perform_car_valuation, navigate_and_handle_cookies
 from utils.file import read_input_file, read_output_file
 
 # Paths relative to the project root
@@ -22,7 +22,10 @@ def test_car_valuation(browser_setup, car_record):
     # Extract test data
     reg_number = car_record["VARIANT_REG"]
     expected_values = read_output_file(OUTPUT_FILE_PATH)
-    expected_valuation = expected_values.get(reg_number)  # Fallback if key is missing
+    expected_valuation = expected_values.get(reg_number)
+
+    # Navigate and handle cookies
+    navigate_and_handle_cookies(browser_setup)
 
     # Perform the action
     actual_valuation = perform_car_valuation(browser_setup, reg_number)

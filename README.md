@@ -1,16 +1,15 @@
 
 # Car Valuation Automation Suite
 
-This project automates validation of car valuations using **Python** and **Playwright** with modular components for maintainability.
-
+This project automates validation of car valuations using **Python** and **Playwright** with page object pattern for maintainability.
+This project uses "Webuyanycar.com" web application to perform the valuation.
 ---
 
 ## Features
 - Reads input from `car_input.txt`.
 - Automates website interactions for valuation retrieval.
 - Compares website output with `car_output.txt`.
-- Logs mismatches or passes to the console.
-
+- Logs mismatches or matches to the console.
 ---
 
 ## Project Structure
@@ -50,7 +49,7 @@ This project automates validation of car valuations using **Python** and **Playw
    ```
 3. Run the test script:
    ```bash
-   pytest src/tests/test_car_valuation.py --headed
+   pytest
    ```
 
 ---
@@ -60,5 +59,10 @@ This project automates validation of car valuations using **Python** and **Playw
 Test passed for RA04DWC: Valuation matched.
 Test failed for RA05XYZ: Mismatch for RA05XYZ: Expected £2400, Got £1,165
 ```
+Note: 
+- Mismatches scenarios will be passed but logged in console as expected fails.
+- No Sensitive data used in this project. If Sensitive data required then its required to use 3rd party credential manager.
+- Setup and Teardown fixtures are stored in conftest.py
+
 ## Test Execution Demo
 [DemoTestExecution.mp4](DemoTestExecution.mp4)
