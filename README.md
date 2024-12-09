@@ -64,6 +64,9 @@ Test failed for RA05XYZ: Mismatch for RA05XYZ: Expected £2400, Got £1,165
 ```plaintext
 HTML Reports are generated after execution with an option to capture screenshot/video/trace file on failure.
 ./html-report
+
+Example Report:
+![img.png](img.png)
 ```
 
 

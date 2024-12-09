@@ -33,7 +33,7 @@ jobs:
       # Run pytest and generate test artifacts
       - name: Run tests with pytest
         run: |
-          pytest tests/ --headed --capture=tee-sys --html=reports/report.html --self-contained-html || true
+          pytest --html=reports/report.html --self-contained-html
 
       # Upload artifacts on failure
       - name: Upload Test Artifacts
