@@ -9,11 +9,10 @@ class HomePage(BasePage):
 
     def handle_cookies(self, accept: bool = True):
         """Handle cookies banner if present on the page."""
-        cookie_banner_selector = "#onetrust-banner-sdk .ot-sdk-container .ot-sdk-row"  # Replace with actual selector
-        accept_button_selector = "#onetrust-accept-btn-handler"  # Replace with actual selector
-        manage_button_selector = "#onetrust-pc-btn-handler"  # Replace with actual selector
-        self.page.wait_for_selector(cookie_banner_selector)
-        if self.page.is_visible(cookie_banner_selector):
+        accept_button_selector = "#onetrust-accept-btn-handler"
+        manage_button_selector = "#onetrust-pc-btn-handler"
+        self.page.wait_for_selector(accept_button_selector)
+        if self.page.is_visible(accept_button_selector):
             if accept:
                 self.click_button(accept_button_selector)
             else:

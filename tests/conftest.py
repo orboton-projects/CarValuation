@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 def browser_setup():
     """Fixture to initialize and clean up Playwright browser."""
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
         yield page
