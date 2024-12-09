@@ -2,7 +2,7 @@ import pandas as pd
 
 def read_input_file(file_path: str) -> list:
     """Reads the car input file and returns a list of dictionaries."""
-    df = pd.read_csv(file_path)
+    df = pd.read_csv(file_path, dtype=str)  # Ensure all data is read as strings
     return df.to_dict(orient="records")
 
 
