@@ -1,5 +1,5 @@
 
-# Car Valuation Automation Suite
+# Car Valuation Automation Test Suite (Demo)
 
 This project automates validation of car valuations using **Python** and **Playwright** with page object pattern for maintainability.
 This project uses "Webuyanycar.com" web application to perform the valuation.
