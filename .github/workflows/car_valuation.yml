@@ -33,7 +33,7 @@ jobs:
       # Run pytest in headed mode and generate test artifacts
       - name: Run Tests with xvfb-run (Headed Mode)
         run: |
-          xvfb-run pytest tests/ --capture=tee-sys --html=reports/report.html --self-contained-html
+          pytest tests/ --capture=tee-sys --html=reports/report.html --self-contained-html
 
       # Upload artifacts on failure
       - name: Upload Test Artifacts
