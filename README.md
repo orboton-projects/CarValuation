@@ -59,6 +59,14 @@ This project uses "Webuyanycar.com" web application to perform the valuation.
 Test passed for RA04DWC: Valuation matched.
 Test failed for RA05XYZ: Mismatch for RA05XYZ: Expected £2400, Got £1,165
 ```
+
+## HTML Test Report
+```plaintext
+HTML Reports are generated after execution with an option to capture screenshot/video/trace file on failure.
+./html-report
+```
+
+
 Note: 
 - Mismatches scenarios will be passed but logged in console as expected fails.
 - No Sensitive data used in this project. If Sensitive data required then its required to use 3rd party credential manager.
